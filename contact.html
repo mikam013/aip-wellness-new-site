@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | AIP Wellness</title>
+<meta name="description" content="Get in touch with Anya Gossage at AIP Wellness — questions about gut health and hormone coaching welcome.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="top-bar">Book a Free Live Consult — Let's Make a Plan</div>
+
+<header class="site-header">
+<div class="nav-bar">
+<a href="index.html" class="logo"><img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness"></a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="contact.html" class="active">Contact Us</a></li>
+</ul>
+<a href="https://api.leadconnectorhq.com/widget/bookings/discovery-call-with-anya" target="_blank" rel="noopener" onclick="return AIPOpenBooking(event)" class="btn btn-primary nav-cta">Book a Live Consult</a>
+</div>
+</header>
+
+<section class="section">
+<div class="container">
+<div class="text-center" style="max-width:640px; margin:0 auto 44px;">
+<p class="eyebrow">Get In Touch</p>
+<h1>We Love to Hear From You!</h1>
+<p>Have a question about hormone health, gut health, or which program is right for you? Send a message below, or skip straight to booking a free live consult.</p>
+</div>
+
+<div class="grid-2" style="align-items:start;">
+
+<div>
+<form>
+<div class="form-field">
+<label for="name">Name *</label>
+<input type="text" id="name" name="name" required>
+</div>
+<div class="form-field">
+<label for="email">Email *</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-field">
+<label for="message">Message</label>
+<textarea id="message" name="message"></textarea>
+</div>
+<button type="submit" class="btn btn-primary btn-block">Send Message</button>
+</form>
+</div>
+
+<div class="callout">
+<h3 style="color:var(--navy);">Prefer to just talk?</h3>
+<p style="font-style:normal; font-size:16px;">Skip the form and book a free live consult directly on my calendar — we'll figure out the best plan for you together.</p>
+<a href="https://api.leadconnectorhq.com/widget/bookings/discovery-call-with-anya" target="_blank" rel="noopener" onclick="return AIPOpenBooking(event)" class="btn btn-primary btn-block">Book a Live Consult</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-brand">
+<img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness">
+<p>AIP Wellness &middot; Nourished at the Core</p>
+</div>
+<ul class="footer-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about-us.html">About Us</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+<div>
+<p style="color:#fff; font-weight:bold; margin-bottom:12px;">Follow Along</p>
+<div class="social-row">
+<a href="https://www.instagram.com/thrive_to_midlife/" target="_blank" rel="noopener"><img src="assets/icon-instagram.png" alt="Instagram"></a>
+<a href="https://www.facebook.com/Chicabravaaa/" target="_blank" rel="noopener"><img src="assets/icon-facebook.png" alt="Facebook"></a>
+<a href="https://www.linkedin.com/in/anya-gossage-b1518b30" target="_blank" rel="noopener"><img src="assets/icon-linkedin.png" alt="LinkedIn"></a>
+<a href="https://www.youtube.com/@thegutzynutritionist/videos" target="_blank" rel="noopener"><img src="assets/icon-youtube.png" alt="YouTube"></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">&copy; 2026 AIP Wellness. All rights reserved.</div>
+</div>
+</footer>
+
+<!-- Booking popup modal -->
+<div class="booking-overlay" id="booking-overlay">
+<div class="booking-modal">
+<button class="booking-close" onclick="AIPCloseBooking()" aria-label="Close">&times;</button>
+<iframe id="booking-iframe" title="Book a Live Consult with Anya"></iframe>
+</div>
+</div>
+<script src="booking-popup.js"></script>
+</body>
+</html>
