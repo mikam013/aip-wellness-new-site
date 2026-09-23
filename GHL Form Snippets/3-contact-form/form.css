@@ -1,0 +1,39 @@
+/*
+  AIP WELLNESS — CONTACT FORM (name, email, message)
+  FILE 2 of 3: form.css
+  Paste into GHL Custom CSS (Page Settings > Custom CSS, or Settings > Custom CSS for the whole site).
+  Paste as-is (no <style> tags needed there). Every rule is scoped to #aip-form-contact, so it won't affect the rest of the page.
+*/
+#aip-form-contact {
+  --aipf-green: #6BC96A; --aipf-green-dark: #5db55c; --aipf-yellow: #F5E14C; --aipf-navy: #1C2B4A;
+  --aipf-pink: #F4A9B8; --aipf-cream: #EFF7EC; --aipf-offwhite: #FBF3EF; --aipf-text: #2c2c28; --aipf-muted: #6b6b62;
+  font-family: Georgia, 'Times New Roman', serif; color: var(--aipf-text); line-height: 1.6; box-sizing: border-box;
+}
+#aip-form-contact *, #aip-form-contact *:before, #aip-form-contact *:after { box-sizing: border-box; }
+#aip-form-contact form { margin: 0; }
+#aip-form-contact input, #aip-form-contact textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-family: inherit; font-size: 15px; color: var(--aipf-text); background: #ffffff; margin: 0;
+}
+#aip-form-contact input:focus-visible, #aip-form-contact textarea:focus-visible, #aip-form-contact button:focus-visible, #aip-form-contact a:focus-visible {
+  outline: 2px solid var(--aipf-green); outline-offset: 2px;
+}
+#aip-form-contact button {
+  display: inline-block; padding: 12px 28px; border: 0; border-radius: 4px; cursor: pointer;
+  background: var(--aipf-green); color: #ffffff; font-family: inherit; font-size: 15px; font-weight: bold; letter-spacing: 0.3px;
+}
+#aip-form-contact button:hover { background: var(--aipf-green-dark); }
+#aip-form-contact button:disabled { opacity: 0.7; cursor: wait; }
+#aip-form-contact .aipf-note { font-size: 12px; color: var(--aipf-muted); margin: 10px 0 0; }
+#aip-form-contact .aipf-note a { color: inherit; }
+#aip-form-contact .aipf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+#aip-form-contact .aipf-status { font-size: 14px; margin: 10px 0 0; }
+#aip-form-contact .aipf-status:empty { display: none; }
+#aip-form-contact .aipf-status.is-success { background: var(--aipf-cream); color: var(--aipf-navy); border-left: 4px solid var(--aipf-green); padding: 10px 14px; border-radius: 6px; }
+#aip-form-contact .aipf-status.is-error { background: #FFE3E3; color: #C62828; border-left: 4px solid #C62828; padding: 10px 14px; border-radius: 6px; }
+
+#aip-form-contact { max-width: 560px; }
+#aip-form-contact .aipf-field { margin-bottom: 18px; }
+#aip-form-contact label { display: block; font-size: 14px; font-weight: bold; color: var(--aipf-navy); margin-bottom: 6px; }
+#aip-form-contact textarea { min-height: 140px; resize: vertical; }
+#aip-form-contact button { width: 100%; }

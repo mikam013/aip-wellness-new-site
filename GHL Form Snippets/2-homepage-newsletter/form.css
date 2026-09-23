@@ -1,0 +1,45 @@
+/*
+  AIP WELLNESS — HOMEPAGE NEWSLETTER FORM (first name + email, light box)
+  FILE 2 of 3: form.css
+  Paste into GHL Custom CSS (Page Settings > Custom CSS, or Settings > Custom CSS for the whole site).
+  Paste as-is (no <style> tags needed there). Every rule is scoped to #aip-form-home, so it won't affect the rest of the page.
+*/
+#aip-form-home {
+  --aipf-green: #6BC96A; --aipf-green-dark: #5db55c; --aipf-yellow: #F5E14C; --aipf-navy: #1C2B4A;
+  --aipf-pink: #F4A9B8; --aipf-cream: #EFF7EC; --aipf-offwhite: #FBF3EF; --aipf-text: #2c2c28; --aipf-muted: #6b6b62;
+  font-family: Georgia, 'Times New Roman', serif; color: var(--aipf-text); line-height: 1.6; box-sizing: border-box;
+}
+#aip-form-home *, #aip-form-home *:before, #aip-form-home *:after { box-sizing: border-box; }
+#aip-form-home form { margin: 0; }
+#aip-form-home input, #aip-form-home textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-family: inherit; font-size: 15px; color: var(--aipf-text); background: #ffffff; margin: 0;
+}
+#aip-form-home input:focus-visible, #aip-form-home textarea:focus-visible, #aip-form-home button:focus-visible, #aip-form-home a:focus-visible {
+  outline: 2px solid var(--aipf-green); outline-offset: 2px;
+}
+#aip-form-home button {
+  display: inline-block; padding: 12px 28px; border: 0; border-radius: 4px; cursor: pointer;
+  background: var(--aipf-green); color: #ffffff; font-family: inherit; font-size: 15px; font-weight: bold; letter-spacing: 0.3px;
+}
+#aip-form-home button:hover { background: var(--aipf-green-dark); }
+#aip-form-home button:disabled { opacity: 0.7; cursor: wait; }
+#aip-form-home .aipf-note { font-size: 12px; color: var(--aipf-muted); margin: 10px 0 0; }
+#aip-form-home .aipf-note a { color: inherit; }
+#aip-form-home .aipf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+#aip-form-home .aipf-status { font-size: 14px; margin: 10px 0 0; }
+#aip-form-home .aipf-status:empty { display: none; }
+#aip-form-home .aipf-status.is-success { background: var(--aipf-cream); color: var(--aipf-navy); border-left: 4px solid var(--aipf-green); padding: 10px 14px; border-radius: 6px; }
+#aip-form-home .aipf-status.is-error { background: #FFE3E3; color: #C62828; border-left: 4px solid #C62828; padding: 10px 14px; border-radius: 6px; }
+
+#aip-form-home { background: var(--aipf-offwhite); border-left: 4px solid var(--aipf-yellow); border-radius: 10px; padding: 32px; max-width: 640px; margin: 0 auto; text-align: center; }
+#aip-form-home .aipf-eyebrow { color: var(--aipf-green); font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px; }
+#aip-form-home h2 { color: var(--aipf-navy); font-weight: normal; font-size: 28px; line-height: 1.25; margin: 0 0 20px; font-family: inherit; }
+#aip-form-home .aipf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; margin-bottom: 18px; }
+#aip-form-home label { display: block; font-size: 14px; font-weight: bold; color: var(--aipf-navy); margin-bottom: 6px; }
+@media (max-width: 640px) {
+  #aip-form-home { padding: 24px 18px; }
+  #aip-form-home h2 { font-size: 23px; }
+  #aip-form-home .aipf-grid { grid-template-columns: 1fr; }
+  #aip-form-home button { width: 100%; }
+}
