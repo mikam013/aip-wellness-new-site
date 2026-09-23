@@ -242,7 +242,7 @@ img { max-width: 100%; display: block; }
 .pill:hover, .pill:focus-visible { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
 .pill:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 
-.footer-grid { display: grid; grid-template-columns: 1.25fr 0.7fr 1fr 1.25fr; gap: 24px; align-items: start; margin-bottom: 20px; }
+.footer-grid { display: grid; grid-template-columns: 1.1fr 0.6fr 1.8fr; gap: 24px; align-items: start; margin-bottom: 20px; }
 .footer-brand-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
 .footer-brand-row > img { height: 56px; width: auto; border-radius: 4px; }
 .footer-brand .footer-tagline { color: #c9d3e0; font-size: 14px; margin: 0 0 12px; max-width: 280px; }
@@ -596,3 +596,8 @@ button.btn { font-family: inherit; }
   h2 { font-size: 24px; }
   .section { padding: 36px 0; }
 }
+
+/* Homepage Nourish Tip */
+.home-tip { max-width: 640px; margin: 0 auto 20px; background: var(--cream); border-left: 4px solid var(--green); border-radius: 10px; padding: 18px 24px; }
+.home-tip-heading { display: flex; align-items: center; gap: 8px; color: var(--navy); font-weight: bold; font-size: 17px; margin: 0 0 6px; }
+.home-tip-text { color: var(--navy); font-style: italic; font-size: 17px; margin: 0; }

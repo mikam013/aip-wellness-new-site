@@ -80,11 +80,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Booking calendar: open the box scrolled past GHL's header so the dates and times show first.
 // 395px = height of GHL's logo/title/description block; adjust if the calendar description changes length.
+// GHL's calendar scrolls itself back to the top while it loads, so the jump is re-applied for a few
+// seconds after loading, and stops as soon as the visitor scrolls the box themselves.
 document.addEventListener("DOMContentLoaded", function () {
   var frame = document.getElementById("aip-booking-frame");
   var box = document.getElementById("booking-scroll");
   if (!frame || !box) return;
-  function jump() { box.scrollTop = 395; }
-  frame.addEventListener("load", jump);
-  jump();
+  var OFFSET = 395;
+  var userMoved = false;
+  var guardUntil = 0;
+  function markUser() { userMoved = true; }
+  box.addEventListener("wheel", markUser, { passive: true });
+  box.addEventListener("touchstart", markUser, { passive: true });
+  box.addEventListener("keydown", markUser);
+  function jump() { if (!userMoved) box.scrollTop = OFFSET; }
+  function settle() {
+    guardUntil = Date.now() + 6000;
+    jump();
+    [150, 400, 800, 1500, 2500, 4000, 6000].forEach(function (ms) { setTimeout(jump, ms); });
+  }
+  box.addEventListener("scroll", function () {
+    if (!userMoved && Date.now() < guardUntil && box.scrollTop < OFFSET - 20) jump();
+  });
+  frame.addEventListener("load", settle);
+  settle();
 });

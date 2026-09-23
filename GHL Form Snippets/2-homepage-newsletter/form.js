@@ -18,7 +18,7 @@
 */
 (function () {
   // Paste your GHL Inbound Webhook URL between the quotes:
-  var WEBHOOK_URL = "[PLACEHOLDER GHL webhook URL]";
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/0d4a38ff-11a4-4dfb-a581-00031dbcc67b";
   var SOURCE = "homepage-newsletter";
 
   function init() {

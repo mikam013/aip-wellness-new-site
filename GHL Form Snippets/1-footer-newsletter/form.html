@@ -1,5 +1,5 @@
 <!--
-  AIP WELLNESS — FOOTER NEWSLETTER FORM (email only, for the dark navy footer)
+  AIP WELLNESS — FOOTER NEWSLETTER FORM (full name + email, for the dark navy footer)
   FILE 1 of 3: form.html  → paste into a GHL "Custom HTML / JS" (Code) element where the form should appear.
   FILE 2 of 3: form.css   → paste into the page's Custom CSS (Page Settings > Custom CSS), or the site-wide Custom CSS.
   FILE 3 of 3: form.js    → paste into the page's Footer Tracking Code, wrapped in <script> and </script>.
@@ -13,6 +13,7 @@
 <form novalidate>
 <div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off"></label></div>
 <div class="aipf-row">
+<input type="text" name="name" data-field aria-label="Full name" placeholder="Full name" autocomplete="name" required>
 <input type="email" name="email" data-field aria-label="Email address" placeholder="Your email" autocomplete="email" required>
 <button type="submit">Join</button>
 </div>

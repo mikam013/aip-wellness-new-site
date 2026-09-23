@@ -10,15 +10,15 @@
   2. Add the trigger "Inbound Webhook" and copy the webhook URL it gives you.
   3. Paste that URL below where it says [PLACEHOLDER GHL webhook URL] (keep the quotes).
   4. Submit the form once on your live page, then in the workflow click "Fetch sample request".
-  5. Add a "Create/Update Contact" action and map the fields: name, email, message. Add a tag such as "website inquiry".
+  5. Add a "Create/Update Contact" action and map the fields: first_name, last_name, email, message. Add a tag such as "website inquiry".
   6. Save and publish the workflow.
   Until step 3 is done, the form shows a message that it isn't connected yet.
 
-  Fields sent: name, email, message, plus "source" (contact-form) and "page" (the page address).
+  Fields sent: name, first_name, last_name, email, message, plus "source" (contact-form) and "page" (the page address).
 */
 (function () {
   // Paste your GHL Inbound Webhook URL between the quotes:
-  var WEBHOOK_URL = "[PLACEHOLDER GHL webhook URL]";
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/0d4a38ff-11a4-4dfb-a581-00031dbcc67b";
   var SOURCE = "contact-form";
 
   function init() {
@@ -48,6 +48,10 @@
     var data = new URLSearchParams();
     var fields = form.querySelectorAll("[data-field]");
     for (var i = 0; i < fields.length; i++) data.append(fields[i].name, fields[i].value.trim());
+    // Split the name so GHL can map First Name and Last Name
+    var parts = (form.querySelector("[name=name]").value.trim()).split(/\s+/);
+    data.append("first_name", parts.shift() || "");
+    data.append("last_name", parts.join(" "));
     data.append("source", SOURCE);
     data.append("page", window.location.href);
 
