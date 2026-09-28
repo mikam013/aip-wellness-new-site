@@ -1,0 +1,195 @@
+/* Live group event popup — shared by every page. Include after styles.css. Matches oura-popup.css. */
+.event-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 43, 74, 0.6);
+  z-index: 900; /* below the booking popup (1000) so booking always stays on top */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.event-overlay.is-open { display: flex; }
+
+.event-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text, #2c2c28);
+}
+.event-overlay.is-open .event-dialog { animation: event-rise 0.45s ease-out; }
+@keyframes event-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.event-art {
+  position: relative;
+  min-height: 460px;
+  background: var(--cream, #EFF7EC);
+  border-radius: 16px 0 0 16px;
+  overflow: hidden;
+}
+/* Anya's photo fills the panel; the date card sits over its lower-left corner. */
+.event-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 47% 30%; display: block; }
+.event-art .event-date { position: absolute; left: 16px; bottom: 16px; width: 104px; }
+.event-art .event-month { font-size: 14px; padding: 6px 0; }
+.event-art .event-day { font-size: 44px; padding: 8px 0 0; }
+.event-art .event-year { font-size: 13px; padding-bottom: 8px; }
+.event-art .event-when { display: none; } /* the time is in the details list */
+/* "Free" sticker: a tilted yellow seal on the photo's top corner. */
+.event-free {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--yellow, #F5E14C);
+  color: var(--navy, #1C2B4A);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-12deg);
+  box-shadow: 0 6px 16px rgba(28, 43, 74, 0.25), inset 0 0 0 3px rgba(255, 255, 255, 0.7), inset 0 0 0 5px var(--yellow, #F5E14C), inset 0 0 0 6px rgba(28, 43, 74, 0.35);
+  z-index: 1;
+}
+.event-free-big { font-size: 26px; font-weight: bold; line-height: 1; letter-spacing: 1px; text-transform: uppercase; }
+.event-free-small { font-size: 11px; line-height: 1.2; margin-top: 3px; font-style: italic; }
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(28, 43, 74, 0.14);
+  color: var(--navy, #1C2B4A);
+}
+.event-month { display: block; width: 100%; background: var(--green, #6BC96A); color: #ffffff; text-align: center; font-size: 17px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 0; }
+.event-day { font-size: 64px; line-height: 1; padding: 12px 0 2px; }
+.event-year { font-size: 15px; padding-bottom: 12px; color: var(--muted, #6b6b62); }
+.event-when { margin: 0; font-size: 15px; font-style: italic; color: var(--navy, #1C2B4A); text-align: center; }
+
+.event-copy { padding: 36px 36px 28px; }
+.event-kicker { font-style: italic; color: var(--muted, #6b6b62); font-size: 15px; margin: 0 0 8px; }
+.event-copy h2 { font-size: 26px; line-height: 1.25; margin: 0 0 12px; color: var(--navy, #1C2B4A); font-weight: normal; padding-right: 24px; }
+.event-copy p { font-size: 16px; margin: 0 0 14px; }
+.event-points { list-style: none; margin: 0 0 20px; padding: 0; }
+.event-points li { position: relative; padding: 4px 0 4px 22px; font-size: 15.5px; line-height: 1.5; }
+.event-points li:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--green, #6BC96A);
+}
+.event-form { margin: 0; }
+.event-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.event-fields label { display: block; font-size: 14px; font-weight: bold; color: var(--navy, #1C2B4A); margin-bottom: 4px; }
+.event-fields input { width: 100%; padding: 11px 12px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 15px; box-sizing: border-box; }
+.event-fields input:focus-visible { outline: 2px solid var(--green, #6BC96A); outline-offset: 1px; }
+.event-form [hidden] { display: none; }
+.event-actions { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.event-actions .event-go { min-width: 240px; }
+.event-later {
+  background: none;
+  border: 0;
+  padding: 10px 4px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--navy, #1C2B4A);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.event-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  color: var(--navy, #1C2B4A);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+.event-close:hover { background: var(--cream, #EFF7EC); }
+
+.event-dialog a:focus-visible,
+.event-later:focus-visible,
+.event-close:focus-visible {
+  outline: 3px solid var(--green, #6BC96A);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .event-overlay { padding: 12px; align-items: flex-end; }
+  .event-dialog { grid-template-columns: 1fr; max-height: 92vh; }
+  .event-art { display: flex; align-items: center; gap: 12px; min-height: 0; padding: 16px 60px 12px 20px; border-radius: 0; overflow: visible; }
+  .event-photo { position: static; width: 76px; height: 76px; flex-shrink: 0; border-radius: 50%; object-position: 47% 30%; }
+  .event-art .event-date { position: static; width: 76px; border-radius: 10px; }
+  .event-art .event-month { font-size: 12px; padding: 4px 0; letter-spacing: 1.5px; }
+  .event-art .event-day { font-size: 34px; padding: 6px 0 0; }
+  .event-art .event-year { font-size: 12px; padding-bottom: 6px; }
+  .event-art .event-when { display: block; text-align: left; }
+  .event-art { position: relative; }
+  .event-free { top: 8px; left: 66px; width: 44px; height: 44px; transform: rotate(-12deg); }
+  .event-free-big { font-size: 13px; letter-spacing: 0.5px; }
+  .event-free-small { display: none; }
+  .event-copy { padding: 16px 20px 20px; }
+  .event-copy h2 { font-size: 21px; padding-right: 0; }
+  .event-copy p, .event-points li { font-size: 15px; }
+  .event-fields { grid-template-columns: 1fr; gap: 10px; }
+  .event-actions .event-go { width: 100%; min-width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-overlay.is-open .event-dialog { animation: none; }
+}
+
+/* Corner tab: reopens the sign-up on every page until the visitor registers or the webinar is over. */
+.event-tab {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--navy, #1C2B4A);
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(28, 43, 74, 0.25);
+  cursor: pointer;
+}
+.event-tab:hover { background: #2a3d63; }
+.event-tab:focus-visible { outline: 3px solid var(--green, #6BC96A); outline-offset: 3px; }
+.event-tab-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--yellow, #F5E14C); box-shadow: 0 0 0 3px rgba(245, 225, 76, 0.3); }
+html.has-event .event-overlay.is-open ~ .event-tab { display: none !important; }
+html.has-event body[data-page="book"] .event-tab { display: none !important; } /* stay out of the way on booking pages */
+@media (max-width: 720px) { .event-tab { left: 12px; bottom: 12px; font-size: 13px; padding: 8px 14px; } }

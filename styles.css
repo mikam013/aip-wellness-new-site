@@ -367,7 +367,7 @@ section[id] { scroll-margin-top: 100px; }
 .draft-banner { background: #FFE3E3 !important; border-left-color: #C62828 !important; color: #C62828 !important; }
 
 /* Program cards (whole card is a link) */
-.program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .program-card {
   display: flex;
   flex-direction: column;
@@ -431,13 +431,20 @@ section[id] { scroll-margin-top: 100px; }
 /* Oura Ring feature */
 .oura-card { justify-content: flex-start; align-items: center; gap: 32px; background: #ffffff; border-color: var(--navy); }
 .oura-visual { flex-shrink: 0; }
-.ring-art { width: 170px; height: 170px; display: block; }
+.oura-photo { margin: 0; width: 260px; }
+.oura-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; }
+.oura-photo figcaption { margin-top: 10px; font-style: italic; font-size: 15px; line-height: 1.45; color: var(--navy); text-align: center; }
+.oura-photo figcaption span { display: block; margin-top: 2px; font-style: normal; font-size: 13px; color: var(--muted, #6b6b62); }
 .oura-copy p { margin-bottom: 12px; }
 .check-list { list-style: none; margin: 0 0 18px; padding: 0; }
 .check-list li { padding: 4px 0 4px 26px; position: relative; font-size: 16px; }
 .check-list li:before { content: "\2713"; color: var(--green); font-weight: bold; position: absolute; left: 0; top: 4px; }
 .supp-note + .supp-note { margin-top: -6px; }
-@media (max-width: 860px) { .oura-card { align-items: flex-start; } .ring-art { width: 120px; height: 120px; } }
+@media (max-width: 860px) {
+  .oura-card { align-items: flex-start; }
+  .oura-photo { width: 100%; max-width: 320px; align-self: center; }
+  .oura-photo img { aspect-ratio: 1 / 1; object-position: center 45%; }
+}
 
 /* Testimonial photos */
 .testimonial-person { display: flex; align-items: center; gap: 12px; margin-top: 4px; }
@@ -493,11 +500,15 @@ body[data-page="book"] .top-bar { display: none; }
 .booking-topics li { background: #ffffff; border: 1px solid #e3eee0; border-radius: 999px; padding: 2px 10px; font-size: 12.5px; color: var(--navy); }
 .booking-signoff { font-style: italic; color: var(--navy); font-size: 14.5px; line-height: 1.5; border-left: 3px solid var(--yellow); padding-left: 12px; margin: 0 0 10px; }
 .booking-signoff strong { font-style: normal; }
+.booking-alt + .booking-signoff { margin-top: 14px; }
 .booking-card { background: #ffffff; border-radius: 16px; box-shadow: 0 16px 40px rgba(28, 43, 74, 0.12); border: 1px solid #e8ecea; padding: 6px; overflow: hidden; }
-/* The box is one screen tall and opens scrolled to the dates, so the calendar and times fit without scrolling the page. */
-.booking-scroll { height: calc(100vh - 140px); min-height: 540px; max-height: 960px; overflow-y: auto; border-radius: 10px; }
-/* GHL shows the times beside the calendar when the frame is at least 800px wide; 960px tall shows it all without scrolling. */
-.booking-frame { display: block; width: 100%; height: 960px; border: 0; border-radius: 10px; }
+/* The calendar shows at full height with no inner scroll box. GHL shows the times beside the calendar when the frame
+   is at least 800px wide. (GHL's form_embed.js is not used: it can move booking frames off-screen.) */
+.booking-scroll { position: relative; border-radius: 10px; }
+/* Shows behind the calendar until GHL draws it. */
+.booking-scroll:before { content: "Loading available times\2026"; position: absolute; top: 140px; left: 0; right: 0; text-align: center; font-style: italic; color: var(--muted); }
+.booking-scroll .booking-frame { position: relative; }
+.booking-frame { display: block; width: 100%; height: 1000px; border: 0; border-radius: 10px; }
 @media (max-width: 1260px) {
   .booking-embed .container.booking-grid { grid-template-columns: 1fr; gap: 24px; max-width: 900px; }
   .booking-copy { padding-top: 0; }
@@ -507,7 +518,6 @@ body[data-page="book"] .top-bar { display: none; }
 @media (max-width: 860px) {
   .booking-title { font-size: 30px; }
   .booking-frame { height: 1450px; } /* narrow screens: GHL stacks the times under the calendar */
-  .booking-scroll { height: auto; max-height: none; overflow: visible; }
 }
 
 /* Newsletter signup */
@@ -601,3 +611,69 @@ button.btn { font-family: inherit; }
 .home-tip { max-width: 640px; margin: 0 auto 20px; background: var(--cream); border-left: 4px solid var(--green); border-radius: 10px; padding: 18px 24px; }
 .home-tip-heading { display: flex; align-items: center; gap: 8px; color: var(--navy); font-weight: bold; font-size: 17px; margin: 0 0 6px; }
 .home-tip-text { color: var(--navy); font-style: italic; font-size: 17px; margin: 0; }
+
+/* Phone sizing: bigger tap targets and no text under 13px */
+@media (max-width: 720px) {
+  .social-row { gap: 6px; }
+  .social-row a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+  .social-row img { width: 40px; height: 40px; }
+  .footer-bottom { font-size: 13px; line-height: 1.6; }
+  .footer-bottom a { display: inline-block; padding: 10px 2px; }
+  .signup-note { font-size: 13px; }
+  .details-link { margin-top: 2px; padding: 10px 0; }
+  .back-link { margin-bottom: 2px; padding: 10px 0; }
+  .review-filter { min-height: 44px; }
+  .testimonial .review-tag, .review-tag { font-size: 13px; }
+  .booking-topics li { font-size: 13.5px; padding: 3px 11px; }
+}
+
+/* Newsletter forms (newsletter.js) */
+.aipf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { font-size: 14px; margin: 10px 0 0; text-align: left; }
+.form-status:empty { display: none; }
+.form-status.is-success { background: var(--cream); color: var(--navy); border-left: 4px solid var(--green); padding: 10px 14px; border-radius: 6px; }
+.form-status.is-error { background: #FFE3E3; color: #C62828; border-left: 4px solid #C62828; padding: 10px 14px; border-radius: 6px; }
+.booking-scroll.is-loaded:before { display: none; }
+
+/* Success stories showcase (program pages, carousel.js): cards glide right to left in an endless loop */
+.review-carousel { position: relative; margin-bottom: 20px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+.review-track { display: flex; width: max-content; padding: 4px 0 14px; }
+.review-carousel.is-running .review-track { animation: showcase-scroll var(--showcase-duration, 56s) linear infinite; }
+.review-carousel:hover .review-track,
+.review-carousel:focus-within .review-track,
+.review-carousel.is-held .review-track { animation-play-state: paused; }
+@keyframes showcase-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Right margin (not gap) on every card keeps the two copies exactly half the track, so the loop is seamless. */
+.review-track .testimonial { flex: 0 0 360px; margin: 0 24px 0 0; display: flex; flex-direction: column; cursor: default; }
+.review-track .review-text { font-size: 16px; line-height: 1.7; }
+.review-track .testimonial-person { margin-top: auto; padding-top: 4px; }
+.review-track:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 8px; }
+@media (max-width: 640px) { .review-track .testimonial { flex-basis: 78vw; margin-right: 16px; } }
+/* Reduced motion: no gliding; a still row visitors can swipe or scroll. */
+@media (prefers-reduced-motion: reduce) {
+  .review-carousel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .review-carousel.is-running .review-track { animation: none; }
+  .review-track .testimonial.is-copy { display: none; }
+}
+
+/* Home "How I Can Help You" cards: all three buttons the same size (room for a two-line label). */
+.help-cards .card-body .btn-block { display: flex; align-items: center; justify-content: center; min-height: calc(2lh + 32px); }
+
+/* Webinar-only elements: hidden unless the free webinar is upcoming and the visitor hasn't registered (event-popup.js). */
+.event-only { display: none !important; }
+html.has-event .event-only { display: inline-flex !important; }
+html.has-event a.btn.event-only { display: inline-block !important; }
+html.has-event .webinar-note.event-only { display: block !important; }
+.hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+/* Top bar: announces the free webinar while it's upcoming (event-popup.js adds html.has-event),
+   otherwise shows the page's usual message. */
+html.has-event .top-bar-default { display: none; }
+html.has-event .top-bar .top-bar-webinar.event-only { display: inline !important; }
+.top-bar-webinar { color: #ffffff; text-decoration: none; }
+.top-bar-webinar:hover .tb-cta, .top-bar-webinar:focus-visible .tb-cta { background: #ffffff; }
+.top-bar-webinar:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; border-radius: 4px; }
+.tb-cta { display: inline-block; margin-left: 8px; padding: 3px 10px; border-radius: 999px; background: var(--yellow); color: var(--navy); letter-spacing: 1px; white-space: nowrap; }
+@media (max-width: 640px) { .tb-long { display: none; } .top-bar { letter-spacing: 1px; } }

@@ -3,14 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Anya Gossage | Online Coaching | AIP Wellness</title>
-<meta name="description" content="Questions about online gut health or hormone health coaching? Book a free consult. Virtual coaching for women in midlife, anywhere in the US.">
-<link rel="stylesheet" href="styles.css?v=20260923f">
-<link rel="stylesheet" href="oura-popup.css?v=20260923b">
+<title>Contact Anya Gossage | Gut &amp; Hormone Coaching | AIP Wellness</title>
+<meta name="description" content="Questions about gut health or hormone health coaching? Book a free consult. Virtual coaching for women in midlife, anywhere in the US.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css?v=20260928b">
+<link rel="stylesheet" href="oura-popup.css?v=20260927a">
+<link rel="stylesheet" href="event-popup.css?v=20260928h">
 </head>
 <body>
 
-<div class="top-bar">Book a Free Live Consult — Let's Make a Plan</div>
+<div class="top-bar"><a href="#" class="top-bar-webinar event-only" data-open-event><span class="tb-label">Free Live Webinar</span><span class="tb-long">: Lower Anxiety &amp; Live With Energy</span> &middot; Mon, Jan 4 &middot; 7 PM EST <span class="tb-cta">Save My Spot &rarr;</span></a><span class="top-bar-default">Book a Free Live Consult — Let's Make a Plan</span></div>
 
 <header class="site-header">
 <div class="nav-bar">
@@ -21,7 +27,7 @@
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li><a href="services.html">Programs</a></li>
-<li><a href="reviews.html">Reviews</a></li>
+<li><a href="reviews.html">Success Stories</a></li>
 <li><a href="supplements.html">Supplements</a></li>
 <li><a href="about-us.html">About Anya</a></li>
 <li><a href="learn.html">Learn</a></li>
@@ -43,14 +49,16 @@
 <div class="grid-2" style="align-items:start;">
 
 <div>
-<form>
+<!-- Contact form: sends to the GHL "Contact Form" Inbound Webhook in contact-form.js (source "contact-form"). -->
+<form action="#" method="post" data-aip-contact novalidate>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="aipf_hp_check" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
 <div class="form-field">
 <label for="name">Name *</label>
-<input type="text" id="name" name="name" required>
+<input type="text" id="name" name="name" autocomplete="name" required>
 </div>
 <div class="form-field">
 <label for="email">Email *</label>
-<input type="email" id="email" name="email" required>
+<input type="email" id="email" name="email" autocomplete="email" required>
 </div>
 <div class="form-field">
 <label for="message">Message</label>
@@ -58,16 +66,16 @@
 </div>
 <button type="submit" class="btn btn-primary btn-block">Send Message</button>
 <p class="signup-note">By submitting, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-<p class="todo-note">TO DO: connect this form to GoHighLevel (send the GHL form link). It doesn't send messages yet.</p>
+<p class="form-status" role="status" aria-live="polite"></p>
 </form>
 </div>
 
 <div class="callout">
 <h3 style="color:var(--navy);">Work With Me From Anywhere</h3>
-<p style="font-style:normal; font-size:16px; margin-bottom:12px;">All of my coaching happens online over Zoom, so you can join from home, the office, or wherever life takes you. I work with women in midlife all across the US.</p>
-<p style="font-style:normal; font-size:16px;">Prefer to just talk? Skip the form and book a free live consult directly on my calendar &mdash; we'll figure out the best plan for you together.</p>
+<p style="font-style:normal; font-size:16px; margin-bottom:12px;">All of my coaching happens 1-1 over Zoom, so you can join from home, the office, or wherever life takes you. I work with women in midlife all across the US.</p>
+<p style="font-style:normal; font-size:16px; margin-bottom:16px;">Prefer to just talk? Skip the form and book a free live consult directly on my calendar &mdash; we'll figure out the best plan for you together.</p>
 <a href="book.html" class="btn btn-primary btn-block">Book a Live Consult</a>
-<p style="font-style:normal; font-size:15px; margin-top:16px;">Or email me at <span class="todo">[PLACEHOLDER email]</span></p>
+<p style="font-style:normal; font-size:15px; margin-top:16px;">Or email me at <a href="mailto:info@nourishedatthecore.com?subject=Website%20inquiry%20(Contact%20page)">info@nourishedatthecore.com</a></p>
 </div>
 
 </div>
@@ -85,7 +93,7 @@
 <div class="pill-row">
 <a href="program-gut-health.html" class="pill">I'm always bloated</a>
 <a href="program-hormone-reset.html" class="pill">My hormones feel off</a>
-<a href="program-lower-anxiety.html" class="pill">I just want my energy back</a>
+<a href="program-hormone-reset.html" class="pill">I just want my energy back</a>
 </div>
 </div>
 
@@ -94,9 +102,9 @@
 <div class="footer-brand">
 <div class="footer-brand-row">
 <img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness logo">
-<div class="footer-badge" title="Nourished at the Core"><svg class="badge-spin" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><defs><path id="badge-circle" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle" textLength="312" lengthAdjust="spacingAndGlyphs">NOURISHED AT THE CORE &#8226; ONLINE COACHING &#8226;</textPath></text></svg><span class="badge-center"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19l7-7"/></svg></span><span class="visually-hidden">Nourished at the Core. Online coaching.</span></div>
+<div class="footer-badge" title="Nourished at the Core"><svg class="badge-spin" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><defs><path id="badge-circle" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle" textLength="312" lengthAdjust="spacingAndGlyphs">NOURISHED AT THE CORE &#8226; WHEREVER YOU ARE &#8226;</textPath></text></svg><span class="badge-center"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19l7-7"/></svg></span><span class="visually-hidden">Nourished at the Core. Coaching wherever you are.</span></div>
 </div>
-<p class="footer-tagline">Online gut &amp; hormone coaching for women in midlife, coast to coast.</p>
+<p class="footer-tagline">Gut &amp; hormone coaching for women in midlife, wherever you are.</p>
 <div class="social-row">
 <a href="https://www.instagram.com/thrive_to_midlife/" target="_blank" rel="noopener"><img src="assets/icon-instagram.png" alt="AIP Wellness on Instagram"></a>
 <a href="https://www.facebook.com/Chicabravaaa/" target="_blank" rel="noopener"><img src="assets/icon-facebook.png" alt="AIP Wellness on Facebook"></a>
@@ -110,7 +118,7 @@
 <ul class="footer-nav">
 <li><a href="index.html">Home</a></li>
 <li><a href="services.html">Programs</a></li>
-<li><a href="reviews.html">Reviews</a></li>
+<li><a href="reviews.html">Success Stories</a></li>
 <li><a href="supplements.html">Supplements</a></li>
 <li><a href="about-us.html">About Anya</a></li>
 <li><a href="learn.html">Learn</a></li>
@@ -128,16 +136,15 @@
 <svg class="envelope-art" viewBox="0 0 72 54" aria-hidden="true" focusable="false"><rect x="4" y="10" width="60" height="40" rx="6" fill="#FBF3EF"/><path d="M4 15l30 19 30-19" fill="none" stroke="#F4A9B8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="12" r="10" fill="#F5E14C"/><path d="M55 17c0-5 3-8 9-9 0 6-3 9-8 9M55 17l4-4" fill="none" stroke="#1C2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="footer-heading">Nourish Notes</p>
 <p class="signup-lead">Gut health, hormone, and midlife wellness tips from Anya.</p>
-<!-- GHL NEWSLETTER FORM (footer): replace this <form> with the GoHighLevel form embed
-     (Sites > Forms > Integrate > Embed Full Page / Inline) for: [PLACEHOLDER GHL form URL].
-     Until then, this form is for display only and does not send anywhere. -->
-<form class="signup-inline" action="#" method="post" onsubmit="return false;">
-<input type="text" name="name" aria-label="Full name" placeholder="Full name" autocomplete="name" required>
+<!-- Newsletter: sends to the GHL Inbound Webhook in newsletter.js (source "footer-newsletter"). -->
+<form class="signup-inline" action="#" method="post" data-aip-newsletter="footer-newsletter" novalidate>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="aipf_hp_check" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
+<input type="text" name="name" aria-label="Name" placeholder="Name" autocomplete="name" required>
 <input type="email" name="email" aria-label="Email address" placeholder="Your email" autocomplete="email" required>
 <button type="submit" class="btn btn-primary">Join</button>
 </form>
 <p class="signup-note">No spam. Unsubscribe anytime.<br>By submitting, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-<p class="todo-note">TO DO: connect this form to GoHighLevel (send the GHL form link). It doesn't collect emails yet.</p>
+<p class="form-status" role="status" aria-live="polite"></p>
 </div>
 </div>
 
@@ -147,7 +154,10 @@
 </div>
 </footer>
 
-<script src="booking-popup.js?v=20260923b"></script>
-<script src="oura-popup.js?v=20260923b"></script>
+<script src="contact-form.js?v=20260927a"></script>
+<script src="newsletter.js?v=20260927b"></script>
+<script src="booking-popup.js?v=20260927b"></script>
+<script src="oura-popup.js?v=20260927b"></script>
+<script src="event-popup.js?v=20260928i"></script>
 </body>
 </html>

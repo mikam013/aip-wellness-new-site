@@ -2,12 +2,12 @@
 <!--
   AIP WELLNESS — FULL SITE FOOTER (for a GHL "Custom HTML / JS" Code element)
   Paste this whole block into ONE Code element in a full-width footer section with no padding.
-  Everything is included: layout, styles, the random Nourish Tip, social icons, and the newsletter form (GHL Form 5).
+  Everything is included: layout, styles, the random Nourish Tip, social icons, and the newsletter form (sends to the GHL Newsletter webhook).
 
   Page links assume these GHL page paths. If yours differ, use Find & Replace on them:
-    Home /   Programs /programs   Reviews /reviews   Supplements /supplements   About Anya /about
+    Home /   Programs /programs   Success Stories /reviews   Supplements /supplements   About Anya /about
     Learn /learn   Contact /contact   Privacy /privacy-policy   Terms /terms
-    Program pages: /program-gut-health  /program-hormone-reset  /program-lower-anxiety
+    Program pages: /program-gut-health  /program-hormone-reset
 -->
 <style>
 #aip-footer {
@@ -134,7 +134,7 @@
 <div class="pill-row">
 <a href="/program-gut-health" class="pill">I'm always bloated</a>
 <a href="/program-hormone-reset" class="pill">My hormones feel off</a>
-<a href="/program-lower-anxiety" class="pill">I just want my energy back</a>
+<a href="/program-hormone-reset" class="pill">I just want my energy back</a>
 </div>
 </div>
 
@@ -143,9 +143,9 @@
 <div class="footer-brand">
 <div class="footer-brand-row">
 <img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness logo">
-<div class="footer-badge" title="Nourished at the Core"><svg class="badge-spin" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><defs><path id="badge-circle" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle" textLength="312" lengthAdjust="spacingAndGlyphs">NOURISHED AT THE CORE &#8226; ONLINE COACHING &#8226;</textPath></text></svg><span class="badge-center"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19l7-7"/></svg></span><span class="visually-hidden">Nourished at the Core. Online coaching.</span></div>
+<div class="footer-badge" title="Nourished at the Core"><svg class="badge-spin" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><defs><path id="badge-circle" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle" textLength="312" lengthAdjust="spacingAndGlyphs">NOURISHED AT THE CORE &#8226; WHEREVER YOU ARE &#8226;</textPath></text></svg><span class="badge-center"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19l7-7"/></svg></span><span class="visually-hidden">Nourished at the Core. Coaching wherever you are.</span></div>
 </div>
-<p class="footer-tagline">Online gut &amp; hormone coaching for women in midlife, coast to coast.</p>
+<p class="footer-tagline">Gut &amp; hormone coaching for women in midlife, wherever you are.</p>
 <div class="social-row">
 <a href="https://www.instagram.com/thrive_to_midlife/" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="AIP Wellness on Instagram"><circle cx="17" cy="17" r="17" fill="#F4A9B8"/><rect x="10" y="10" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17" cy="17" r="3.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="21.2" cy="12.8" r="1" fill="#fff"/></svg></a>
 <a href="https://www.facebook.com/Chicabravaaa/" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="AIP Wellness on Facebook"><circle cx="17" cy="17" r="17" fill="#1C2B4A"/><path d="M18.4 26v-7.6h2.5l.4-3h-2.9v-1.9c0-.9.3-1.5 1.5-1.5h1.5V9.3c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4h-2.5v3h2.5V26z" fill="#fff"/></svg></a>
@@ -159,7 +159,7 @@
 <ul class="footer-nav">
 <li><a href="/">Home</a></li>
 <li><a href="/programs">Programs</a></li>
-<li><a href="/reviews">Reviews</a></li>
+<li><a href="/reviews">Success Stories</a></li>
 <li><a href="/supplements">Supplements</a></li>
 <li><a href="/about">About Anya</a></li>
 <li><a href="/learn">Learn</a></li>
@@ -176,11 +176,121 @@
 <div class="footer-card footer-signup" id="newsletter">
 <svg class="envelope-art" viewBox="0 0 72 54" aria-hidden="true" focusable="false"><rect x="4" y="10" width="60" height="40" rx="6" fill="#FBF3EF"/><path d="M4 15l30 19 30-19" fill="none" stroke="#F4A9B8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="12" r="10" fill="#F5E14C"/><path d="M55 17c0-5 3-8 9-9 0 6-3 9-8 9M55 17l4-4" fill="none" stroke="#1C2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="footer-heading">Nourish Notes</p>
-<!-- GHL Form 5 (newsletter). To use a different form, swap the form ID in both places below. -->
-<iframe src="https://api.leadconnectorhq.com/widget/form/GftBXnyLMinYplOHrLCS" id="inline-GftBXnyLMinYplOHrLCS" class="aip-footer-form"
-  data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated"
-  data-deactivation-type="neverDeactivate" data-form-name="Form 5" data-height="230"
-  data-layout-iframe-id="inline-GftBXnyLMinYplOHrLCS" data-form-id="GftBXnyLMinYplOHrLCS" title="Newsletter signup"></iframe>
+<!-- Newsletter form: sends to the GHL Newsletter webhook (name + email, source "footer-newsletter"). -->
+<div id="aip-form-footer" class="aipf">
+<form novalidate>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
+<div class="aipf-row">
+<input type="text" name="name" data-field aria-label="Name" placeholder="Name" autocomplete="name" required>
+<input type="email" name="email" data-field aria-label="Email address" placeholder="Your email" autocomplete="email" required>
+<button type="submit">Join</button>
+</div>
+</form>
+<p class="aipf-note">No spam. Unsubscribe anytime.<br>By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+<p class="aipf-status" role="status" aria-live="polite"></p>
+</div>
+<style>
+#aip-form-footer {
+  --aipf-green: #6BC96A; --aipf-green-dark: #5db55c; --aipf-yellow: #F5E14C; --aipf-navy: #1C2B4A;
+  --aipf-pink: #F4A9B8; --aipf-cream: #EFF7EC; --aipf-offwhite: #FBF3EF; --aipf-text: #2c2c28; --aipf-muted: #6b6b62;
+  font-family: Georgia, 'Times New Roman', serif; color: var(--aipf-text); line-height: 1.6; box-sizing: border-box;
+}
+#aip-form-footer *, #aip-form-footer *:before, #aip-form-footer *:after { box-sizing: border-box; }
+#aip-form-footer form { margin: 0; }
+#aip-form-footer input, #aip-form-footer textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-family: inherit; font-size: 15px; color: var(--aipf-text); background: #ffffff; margin: 0;
+}
+#aip-form-footer input:focus-visible, #aip-form-footer textarea:focus-visible, #aip-form-footer button:focus-visible, #aip-form-footer a:focus-visible {
+  outline: 2px solid var(--aipf-green); outline-offset: 2px;
+}
+#aip-form-footer button {
+  display: inline-block; padding: 12px 28px; border: 0; border-radius: 4px; cursor: pointer;
+  background: var(--aipf-green); color: #ffffff; font-family: inherit; font-size: 15px; font-weight: bold; letter-spacing: 0.3px;
+}
+#aip-form-footer button:hover { background: var(--aipf-green-dark); }
+#aip-form-footer button:disabled { opacity: 0.7; cursor: wait; }
+#aip-form-footer .aipf-note { font-size: 12px; color: var(--aipf-muted); margin: 10px 0 0; }
+#aip-form-footer .aipf-note a { color: inherit; }
+#aip-form-footer .aipf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+#aip-form-footer .aipf-status { font-size: 14px; margin: 10px 0 0; }
+#aip-form-footer .aipf-status:empty { display: none; }
+#aip-form-footer .aipf-status.is-success { background: var(--aipf-cream); color: var(--aipf-navy); border-left: 4px solid var(--aipf-green); padding: 10px 14px; border-radius: 6px; }
+#aip-form-footer .aipf-status.is-error { background: #FFE3E3; color: #C62828; border-left: 4px solid #C62828; padding: 10px 14px; border-radius: 6px; }
+
+#aip-form-footer { color: #c9d3e0; max-width: 360px; }
+#aip-form-footer .aipf-lead { font-size: 14px; margin: 0 0 10px; color: #c9d3e0; }
+#aip-form-footer .aipf-row { display: flex; flex-wrap: wrap; gap: 8px; }
+#aip-form-footer .aipf-row input { flex: 1 1 140px; min-width: 0; }
+#aip-form-footer .aipf-row button { padding: 12px 18px; }
+#aip-form-footer .aipf-note { color: #93a0b8; }
+#aip-form-footer .aipf-note a { color: #c9d3e0; }
+</style>
+<script>
+(function () {
+  // Paste your GHL Inbound Webhook URL between the quotes:
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/d608ebbf-cede-45c4-80c2-5a1e98bcc8cc";
+  var SOURCE = "footer-newsletter";
+
+  var loadedAt = Date.now();
+
+  function init() {
+  var root = document.getElementById("aip-form-footer");
+  if (!root || root.getAttribute("data-ready")) return;
+  root.setAttribute("data-ready", "1");
+  var form = root.querySelector("form");
+  var button = form.querySelector("button[type=submit]");
+  var status = root.querySelector(".aipf-status");
+  var buttonText = button.textContent;
+
+  function show(kind, message) {
+    status.className = "aipf-status is-" + kind;
+    status.textContent = message;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    // Spam bots fill the hidden field and submit instantly. Only block when both happen, so a browser
+      // or password manager that auto-fills the hidden field can't silently stop a real sign-up.
+      if (form.querySelector(".aipf-hp input").value && Date.now() - loadedAt < 3000) return;
+
+    if (WEBHOOK_URL.indexOf("https://") !== 0) {
+      show("error", "This form isn't connected yet. Add your GHL webhook link to the code to start receiving submissions.");
+      return;
+    }
+
+    var data = new URLSearchParams();
+    var fields = form.querySelectorAll("[data-field]");
+    for (var i = 0; i < fields.length; i++) data.append(fields[i].name, fields[i].value.trim());
+    // Split the name so GHL can map First Name and Last Name
+    var parts = (form.querySelector("[name=name]").value.trim()).split(/\s+/);
+    data.append("first_name", parts.shift() || "");
+    data.append("last_name", parts.join(" "));
+    data.append("source", SOURCE);
+    data.append("page", window.location.href);
+
+    button.disabled = true;
+    button.textContent = "Sending\u2026";
+    fetch(WEBHOOK_URL, { method: "POST", mode: "no-cors", body: data })
+      .then(function () {
+        form.reset();
+        show("success", "You're on the list! Watch your inbox for tips from Anya.");
+      })
+      .catch(function () {
+        show("error", "Something went wrong. Please try again in a moment.");
+      })
+      .then(function () {
+        button.disabled = false;
+        button.textContent = buttonText;
+      });
+  });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
 
 </div>
 </div>

@@ -10,16 +10,18 @@
   2. Add the trigger "Inbound Webhook" and copy the webhook URL it gives you.
   3. Paste that URL below where it says [PLACEHOLDER GHL webhook URL] (keep the quotes).
   4. Submit the form once on your live page, then in the workflow click "Fetch sample request".
-  5. Add a "Create/Update Contact" action and map the fields: first_name, email. Add a tag such as "newsletter".
+  5. Add a "Create/Update Contact" action and map the fields: name, email. Add a tag such as "newsletter".
   6. Save and publish the workflow.
   Until step 3 is done, the form shows a message that it isn't connected yet.
 
-  Fields sent: first_name, email, plus "source" (homepage-newsletter) and "page" (the page address).
+  Fields sent: name, email, plus "source" (homepage-newsletter) and "page" (the page address).
 */
 (function () {
   // Paste your GHL Inbound Webhook URL between the quotes:
-  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/0d4a38ff-11a4-4dfb-a581-00031dbcc67b";
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/d608ebbf-cede-45c4-80c2-5a1e98bcc8cc";
   var SOURCE = "homepage-newsletter";
+
+  var loadedAt = Date.now();
 
   function init() {
   var root = document.getElementById("aip-form-home");
@@ -38,7 +40,9 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (form.querySelector(".aipf-hp input").value) return; // spam bot filled the hidden field
+    // Spam bots fill the hidden field and submit instantly. Only block when both happen, so a browser
+      // or password manager that auto-fills the hidden field can't silently stop a real sign-up.
+      if (form.querySelector(".aipf-hp input").value && Date.now() - loadedAt < 3000) return;
 
     if (WEBHOOK_URL.indexOf("https://") !== 0) {
       show("error", "This form isn't connected yet. Add your GHL webhook link to the code to start receiving submissions.");

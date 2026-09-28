@@ -1,6 +1,6 @@
 // Oura Ring popup — shared by every page. Include after booking-popup.js.
 (function () {
-  var OURA_URL = "https://us.fullscript.com/u/catalog/product/U3ByZWU6OlByb2R1Y3QtMTE0ODkz";
+  var OURA_URL = "https://us.fullscript.com/s/agossage/shop/product/U3ByZWU6OlByb2R1Y3QtMTE0ODkz?variant=U3ByZWU6OlZhcmlhbnQtMTMyMTcw&collectionId=Q29sbGVjdGlvbi0zNDgyNTI%3D";
   var STORAGE_KEY = "aipOuraHiddenUntil";
   var HIDE_DAYS = 7;
   var DELAY_MS = 15000;
@@ -27,6 +27,10 @@
     var b = document.getElementById("booking-overlay");
     return !!(b && b.classList.contains("active"));
   }
+  function eventIsOpen() {
+    var ev = document.getElementById("event-overlay");
+    return !!(ev && ev.classList.contains("is-open"));
+  }
 
   function build() {
     overlay = document.createElement("div");
@@ -35,16 +39,10 @@
     overlay.innerHTML =
       '<div class="oura-dialog" role="dialog" aria-modal="true" aria-labelledby="oura-title">' +
         '<button type="button" class="oura-close" aria-label="Close">&times;</button>' +
-        '<div class="oura-art" aria-hidden="true">' +
-          '<svg viewBox="0 0 200 200" focusable="false">' +
-            '<g transform="rotate(-90 100 100)"><g class="oura-arcs">' +
-              '<circle cx="100" cy="100" r="78" stroke="#6BC96A" stroke-dasharray="140 350" stroke-dashoffset="0"/>' +
-              '<circle cx="100" cy="100" r="78" stroke="#F5E14C" stroke-dasharray="140 350" stroke-dashoffset="-163"/>' +
-              '<circle cx="100" cy="100" r="78" stroke="#F4A9B8" stroke-dasharray="140 350" stroke-dashoffset="-326"/>' +
-            '</g></g>' +
-            '<g class="oura-words"><text x="100" y="80">sleep</text><text x="100" y="105">stress</text><text x="100" y="130">recovery</text></g>' +
-          '</svg>' +
-        '</div>' +
+        '<figure class="oura-art">' +
+          '<img src="assets/anya-oura-ring-600.jpg" width="600" height="800" loading="lazy" alt="Anya Gossage smiling in a sunny garden, wearing her Oura Ring">' +
+          '<figcaption>&ldquo;I take this ring everywhere, even on vacation.&rdquo;<span>&mdash; Anya Gossage</span></figcaption>' +
+        '</figure>' +
         '<div class="oura-copy">' +
           '<p class="oura-kicker">Now in Anya&rsquo;s supplement shop</p>' +
           '<h2 id="oura-title">See how your body is really doing, day to day</h2>' +
@@ -88,8 +86,9 @@
   }
 
   function open() {
-    if (!overlay || overlay.classList.contains("is-open") || bookingIsOpen()) return;
+    if (!overlay || overlay.classList.contains("is-open") || bookingIsOpen() || eventIsOpen()) return;
     autoDone = true;
+    window.AIP_POPUP_SHOWN = true;
     clearTimeout(timer);
     lastFocus = document.activeElement;
     overlay.classList.add("is-open");
@@ -110,6 +109,8 @@
     if (autoDone) return;
     // Stay out of the way if the visitor is booking (or has opened booking this visit).
     if (bookingIsOpen() || window.AIP_BOOKING_USED || calendarInView()) { autoDone = true; return; }
+    // Only one popup per page view: the live event popup (event-popup.js) goes first while it's running.
+    if (window.AIP_POPUP_SHOWN || window.AIP_EVENT_PENDING || eventIsOpen()) { autoDone = true; return; }
     if (hiddenUntil() > Date.now()) { autoDone = true; return; }
     open();
   }

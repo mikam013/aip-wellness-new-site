@@ -7,22 +7,22 @@
   2. Add the trigger "Inbound Webhook" and copy the webhook URL it gives you.
   3. Paste that URL further down this file where it says [PLACEHOLDER GHL webhook URL] (keep the quotes).
   4. Submit the form once on your live page, then in the workflow click "Fetch sample request".
-  5. Add a "Create/Update Contact" action and map the fields: first_name, email. Add a tag such as "newsletter".
+  5. Add a "Create/Update Contact" action and map the fields: name, email. Add a tag such as "newsletter".
   6. Save and publish the workflow.
   Until step 3 is done, the form shows a message that it isn't connected yet.
 
-  Fields sent: first_name, email, plus "source" (homepage-newsletter) and "page" (the page address).
+  Fields sent: name, email, plus "source" (homepage-newsletter) and "page" (the page address).
   The privacy link points to /privacy-policy. Change it if your GHL privacy page uses a different address.
 -->
 <div id="aip-form-home" class="aipf">
 <p class="aipf-eyebrow">Free Newsletter</p>
 <h2>Get Anya's gut &amp; hormone tips in your inbox</h2>
 <form novalidate>
-<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
 <div class="aipf-grid">
 <div>
-<label for="aip-home-first-name">First Name *</label>
-<input type="text" id="aip-home-first-name" name="first_name" data-field autocomplete="given-name" required>
+<label for="aip-home-name">Name *</label>
+<input type="text" id="aip-home-name" name="name" data-field autocomplete="name" required>
 </div>
 <div>
 <label for="aip-home-email">Email *</label>
@@ -78,8 +78,10 @@
 <script>
 (function () {
   // Paste your GHL Inbound Webhook URL between the quotes:
-  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/0d4a38ff-11a4-4dfb-a581-00031dbcc67b";
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/d608ebbf-cede-45c4-80c2-5a1e98bcc8cc";
   var SOURCE = "homepage-newsletter";
+
+  var loadedAt = Date.now();
 
   function init() {
   var root = document.getElementById("aip-form-home");
@@ -98,7 +100,9 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (form.querySelector(".aipf-hp input").value) return; // spam bot filled the hidden field
+    // Spam bots fill the hidden field and submit instantly. Only block when both happen, so a browser
+      // or password manager that auto-fills the hidden field can't silently stop a real sign-up.
+      if (form.querySelector(".aipf-hp input").value && Date.now() - loadedAt < 3000) return;
 
     if (WEBHOOK_URL.indexOf("https://") !== 0) {
       show("error", "This form isn't connected yet. Add your GHL webhook link to the code to start receiving submissions.");

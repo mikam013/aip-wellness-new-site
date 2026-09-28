@@ -17,9 +17,9 @@
 <div id="aip-form-footer" class="aipf">
 <p class="aipf-lead">Gut health, hormone, and midlife wellness tips from Anya.</p>
 <form novalidate>
-<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
 <div class="aipf-row">
-<input type="text" name="name" data-field aria-label="Full name" placeholder="Full name" autocomplete="name" required>
+<input type="text" name="name" data-field aria-label="Name" placeholder="Name" autocomplete="name" required>
 <input type="email" name="email" data-field aria-label="Email address" placeholder="Your email" autocomplete="email" required>
 <button type="submit">Join</button>
 </div>
@@ -67,8 +67,10 @@
 <script>
 (function () {
   // Paste your GHL Inbound Webhook URL between the quotes:
-  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/0d4a38ff-11a4-4dfb-a581-00031dbcc67b";
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/d608ebbf-cede-45c4-80c2-5a1e98bcc8cc";
   var SOURCE = "footer-newsletter";
+
+  var loadedAt = Date.now();
 
   function init() {
   var root = document.getElementById("aip-form-footer");
@@ -87,7 +89,9 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (form.querySelector(".aipf-hp input").value) return; // spam bot filled the hidden field
+    // Spam bots fill the hidden field and submit instantly. Only block when both happen, so a browser
+      // or password manager that auto-fills the hidden field can't silently stop a real sign-up.
+      if (form.querySelector(".aipf-hp input").value && Date.now() - loadedAt < 3000) return;
 
     if (WEBHOOK_URL.indexOf("https://") !== 0) {
       show("error", "This form isn't connected yet. Add your GHL webhook link to the code to start receiving submissions.");
