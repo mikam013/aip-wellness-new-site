@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form Preview</title>
+<!-- Preview only (not for GHL): loads the three files the same way GHL will. -->
+<link rel="stylesheet" href="form.css">
+<style>body{margin:0;font-family:Georgia,serif;color:#2c2c28} .wrap{max-width:760px;margin:0 auto;padding:24px 16px} h1{color:#1C2B4A;font-weight:normal;font-size:24px}</style>
+</head><body><div class="wrap">
+<h1>Contact Form (preview only)</h1>
+<div id="aip-form-contact" class="aipf">
+<form novalidate>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off"></label></div>
+<div class="aipf-field">
+<label for="aip-contact-name">Name *</label>
+<input type="text" id="aip-contact-name" name="name" data-field autocomplete="name" required>
+</div>
+<div class="aipf-field">
+<label for="aip-contact-email">Email *</label>
+<input type="email" id="aip-contact-email" name="email" data-field autocomplete="email" required>
+</div>
+<div class="aipf-field">
+<label for="aip-contact-message">Message</label>
+<textarea id="aip-contact-message" name="message" data-field></textarea>
+</div>
+<button type="submit">Send Message</button>
+</form>
+<p class="aipf-note">By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+<p class="aipf-status" role="status" aria-live="polite"></p>
+</div>
+
+</div>
+<script src="form.js"></script>
+</body></html>

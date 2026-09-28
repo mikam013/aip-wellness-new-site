@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Anya Gossage | Gut &amp; Hormone Coaching | AIP Wellness</title>
-<meta name="description" content="Questions about gut health or hormone health coaching? Book a free consult. Virtual coaching for women in midlife, anywhere in the US.">
+<title>Book a Free Consult | AIP Wellness</title>
+<meta name="description" content="Book a free consult with Anya Gossage for gut health and hormone health coaching. Pick a time that works for you, wherever you are in the US.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://api.leadconnectorhq.com">
+<link rel="preconnect" href="https://stcdn.leadconnectorhq.com" crossorigin>
+<link rel="preconnect" href="https://backend.leadconnectorhq.com" crossorigin>
 <link rel="stylesheet" href="styles.css?v=20260928b">
 <link rel="stylesheet" href="oura-popup.css?v=20260927a">
 <link rel="stylesheet" href="event-popup.css?v=20260928h">
 </head>
-<body>
+<body data-page="book">
 
 <div class="top-bar"><a href="#" class="top-bar-webinar event-only" data-open-event><span class="tb-label">Free Live Webinar</span><span class="tb-long">: Lower Anxiety &amp; Live With Energy</span> &middot; Mon, Jan 4 &middot; 7 PM EST <span class="tb-cta">Save My Spot &rarr;</span></a><span class="top-bar-default">Book a Free Live Consult — Let's Make a Plan</span></div>
 
@@ -23,7 +26,7 @@
 <a href="index.html" class="logo"><img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness logo, back to home page"></a>
 <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
 <nav id="site-menu" class="site-nav" aria-label="Main menu">
-<a href="book.html" class="btn btn-primary nav-cta nav-cta-mobile">Book a Free Consult</a>
+<a href="#book" class="btn btn-primary nav-cta nav-cta-mobile">Book a Free Consult</a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
 <li><a href="services.html">Programs</a></li>
@@ -31,53 +34,44 @@
 <li><a href="supplements.html">Supplements</a></li>
 <li><a href="about-us.html">About Anya</a></li>
 <li><a href="learn.html">Learn</a></li>
-<li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
-<a href="book.html" class="btn btn-primary nav-cta nav-cta-desktop">Book a Free Consult</a>
+<a href="#book" class="btn btn-primary nav-cta nav-cta-desktop">Book a Free Consult</a>
 </div>
 </header>
 
-<section class="section">
-<div class="container">
-<div class="text-center" style="max-width:640px; margin:0 auto 28px;">
-<p class="eyebrow">Get In Touch</p>
-<h1>We Love to Hear From You!</h1>
-<p>Have a question about hormone health, gut health, or which program is right for you? Send a message below, or skip straight to booking a free live consult.</p>
+<!-- Book a free consult (embedded GHL calendar) -->
+<section class="section booking-embed" id="book">
+<div class="container booking-grid">
+<div class="booking-copy">
+<p class="eyebrow booking-eyebrow">Ready When You Are</p>
+<h1 class="booking-title">Let's talk about how you <span>want to feel.</span></h1>
+<p class="booking-lead">During this free 30-minute discovery call over Zoom, we'll talk about what you've been experiencing and explore how hormone and gut health may be affecting your symptoms.</p>
+<ul class="booking-checks">
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12.5l4 4 8-9"/></svg>Talk through what you've been experiencing</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12.5l4 4 8-9"/></svg>Explore how hormone and gut health may be affecting your symptoms</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12.5l4 4 8-9"/></svg>Review your goals and possible next steps</li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 12.5l4 4 8-9"/></svg>See whether personalized support feels like the right fit</li>
+</ul>
+<p class="booking-topics-label">A supportive space to talk about:</p>
+<ul class="booking-topics">
+<li>Fatigue</li>
+<li>Weight changes</li>
+<li>Anxiety</li>
+<li>Poor sleep</li>
+<li>Painful periods</li>
+<li>Bloating</li>
+<li>Brain fog</li>
+<li>Other hormone-related symptoms</li>
+</ul>
+<p class="booking-signoff">I&rsquo;m looking forward to connecting with you.<br>With care, <strong>Anya Gossage</strong></p>
 </div>
-
-<div class="grid-2" style="align-items:start;">
-
-<div>
-<!-- Contact form: sends to the GHL "Contact Form" Inbound Webhook in contact-form.js (source "contact-form"). -->
-<form action="#" method="post" data-aip-contact novalidate>
-<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" name="aipf_hp_check" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
-<div class="form-field">
-<label for="name">Name *</label>
-<input type="text" id="name" name="name" autocomplete="name" required>
+<div class="booking-card">
+<!-- GHL CALENDAR EMBED: in GHL you can instead paste the official code from Calendars > (your calendar) > Share > Embed Code (it auto-resizes). -->
+<div class="booking-scroll" id="booking-scroll">
+<iframe src="https://api.leadconnectorhq.com/widget/bookings/discovery-call-with-anya" id="aip-booking-frame" class="booking-frame" title="Book a free consult with Anya Gossage"></iframe>
 </div>
-<div class="form-field">
-<label for="email">Email *</label>
-<input type="email" id="email" name="email" autocomplete="email" required>
-</div>
-<div class="form-field">
-<label for="message">Message</label>
-<textarea id="message" name="message"></textarea>
-</div>
-<button type="submit" class="btn btn-primary btn-block">Send Message</button>
-<p class="signup-note">By submitting, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-<p class="form-status" role="status" aria-live="polite"></p>
-</form>
-</div>
-
-<div class="callout">
-<h3 style="color:var(--navy);">Work With Me From Anywhere</h3>
-<p style="font-style:normal; font-size:16px; margin-bottom:12px;">All of my coaching happens 1-1 over Zoom, so you can join from home, the office, or wherever life takes you. I work with women in midlife all across the US.</p>
-<p style="font-style:normal; font-size:16px; margin-bottom:16px;">Prefer to just talk? Skip the form and book a free live consult directly on my calendar &mdash; we'll figure out the best plan for you together.</p>
-<a href="book.html" class="btn btn-primary btn-block">Book a Live Consult</a>
-<p style="font-style:normal; font-size:15px; margin-top:16px;">Or email me at <a href="mailto:info@nourishedatthecore.com?subject=Website%20inquiry%20(Contact%20page)">info@nourishedatthecore.com</a></p>
-</div>
-
 </div>
 </div>
 </section>
@@ -154,7 +148,6 @@
 </div>
 </footer>
 
-<script src="contact-form.js?v=20260927a"></script>
 <script src="newsletter.js?v=20260927b"></script>
 <script src="booking-popup.js?v=20260927b"></script>
 <script src="oura-popup.js?v=20260927b"></script>

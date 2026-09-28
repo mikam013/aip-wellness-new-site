@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GHL Footer Preview</title></head><body style="margin:0;background:#EFF7EC;"><div style="height:220px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;color:#1C2B4A;">(page content above the footer)</div>
+<!--
+  AIP WELLNESS — FULL SITE FOOTER (for a GHL "Custom HTML / JS" Code element)
+  Paste this whole block into ONE Code element in a full-width footer section with no padding.
+  Everything is included: layout, styles, the random Nourish Tip, social icons, and the newsletter form (sends to the GHL Newsletter webhook).
+
+  Page links assume these GHL page paths. If yours differ, use Find & Replace on them:
+    Home /   Programs /programs   Success Stories /reviews   Supplements /supplements   About Anya /about
+    Learn /learn   Contact /contact   Privacy /privacy-policy   Terms /terms
+    Program pages: /program-gut-health  /program-hormone-reset
+-->
+<style>
+#aip-footer {
+  --green: #6BC96A; --yellow: #F5E14C; --navy: #1C2B4A; --pink: #F4A9B8;
+  --cream: #EFF7EC; --offwhite: #FBF3EF; --text: #2c2c28; --muted: #6b6b62;
+  --wave-bg: #ffffff; /* color of the section ABOVE the footer, so the wave blends in */
+  font-family: Georgia, 'Times New Roman', serif; line-height: 1.7; text-align: left;
+}
+#aip-footer *, #aip-footer *:before, #aip-footer *:after { box-sizing: border-box; }
+#aip-footer p { margin: 0 0 16px; font-size: 17px; }
+#aip-footer h2 { color: #ffffff; font-weight: normal; line-height: 1.25; margin: 0 0 16px; font-family: inherit; }
+#aip-footer img, #aip-footer svg { max-width: 100%; }
+#aip-footer .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+#aip-footer .btn { display: inline-block; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-size: 15px; font-weight: bold; letter-spacing: 0.3px; border: 2px solid transparent; cursor: pointer; font-family: inherit; }
+#aip-footer .btn-primary { background-color: var(--green); color: #ffffff; }
+#aip-footer .btn-primary:hover { background-color: #5db55c; }
+#aip-footer .social-row svg { display: block; }
+#aip-footer .aip-footer-form { width: 100%; height: 230px; border: none; border-radius: 6px; background: transparent; }
+#aip-footer { position: relative; overflow: hidden; background-color: var(--navy); color: #c9d3e0; padding: 0 0 18px; }
+#aip-footer .footer-wave { background: var(--wave-bg, #ffffff); line-height: 0; }
+#aip-footer .footer-wave svg { display: block; width: 100%; height: 48px; }
+#aip-footer .footer-wave .wave-back { fill: var(--green); opacity: 0.35; }
+#aip-footer .footer-wave .wave-front { fill: var(--navy); }
+#aip-footer .footer-art { position: absolute; width: 260px; height: 260px; fill: none; stroke: #ffffff; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.09; pointer-events: none; }
+#aip-footer .footer-art-left { left: -20px; bottom: -10px; }
+#aip-footer .footer-art-right { right: -10px; top: 70px; }
+#aip-footer .footer-inner { position: relative; z-index: 1; padding-top: 4px; }
+#aip-footer .footer-heading { color: #ffffff; font-weight: bold; font-size: 17px; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+#aip-footer .leaf-icon { width: 20px; height: 20px; fill: none; stroke: var(--green); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+#aip-footer .footer-start { text-align: center; padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+#aip-footer .footer-start-title { color: #ffffff; font-size: 24px; margin-bottom: 12px; }
+#aip-footer .pill-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+#aip-footer .pill { display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s; }
+#aip-footer .pill:hover, #aip-footer .pill:focus-visible { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
+#aip-footer .pill:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+#aip-footer .footer-grid { display: grid; grid-template-columns: 1.1fr 0.6fr 1.8fr; gap: 24px; align-items: start; margin-bottom: 20px; }
+#aip-footer .footer-brand-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+#aip-footer .footer-brand-row > img { height: 56px; width: auto; border-radius: 4px; }
+#aip-footer .footer-brand .footer-tagline { color: #c9d3e0; font-size: 14px; margin: 0 0 12px; max-width: 280px; }
+#aip-footer .footer-badge { position: relative; width: 84px; height: 84px; flex-shrink: 0; }
+#aip-footer .badge-spin { width: 100%; height: 100%; animation: badge-rotate 22s linear infinite; }
+#aip-footer .badge-spin text { fill: var(--pink); font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+#aip-footer .footer-badge:hover .badge-spin { animation-play-state: paused; }
+#aip-footer .badge-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+#aip-footer .badge-center .leaf-icon { width: 24px; height: 24px; }
+@keyframes badge-rotate { to { transform: rotate(360deg); } }
+#aip-footer .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#aip-footer .footer-nav { list-style: none; margin: 0; padding: 0; }
+#aip-footer .footer-nav li { margin-bottom: 6px; }
+#aip-footer .footer-nav a { color: #c9d3e0; text-decoration: none; font-size: 15px; }
+#aip-footer .footer-nav a:hover { color: #ffffff; }
+#aip-footer .social-row { display: flex; gap: 10px; }
+#aip-footer .social-row img { width: 34px; height: 34px; border-radius: 50%; }
+#aip-footer .footer-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 16px; }
+#aip-footer .tip-card { border-left: 4px solid var(--yellow); }
+#aip-footer .tip-text { color: #ffffff; font-style: italic; font-size: 16px; margin: 0; }
+#aip-footer .signup-inline input { flex-basis: 120px; }
+#aip-footer .signup-inline .btn { padding: 12px 18px; }
+#aip-footer .envelope-art { width: 48px; height: 36px; display: block; margin-bottom: 6px; }
+#aip-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; font-size: 12px; text-align: center; color: #93a0b8; }
+@media (max-width: 1000px) {
+  #aip-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  #aip-footer .footer-grid { grid-template-columns: 1fr; gap: 18px; }
+  #aip-footer .footer-start-title { font-size: 21px; }
+  #aip-footer .pill { font-size: 14px; padding: 7px 14px; }
+  #aip-footer .footer-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  #aip-footer .footer-nav li { margin: 0; }
+  #aip-footer .footer-art { width: 180px; height: 180px; }
+  #aip-footer .footer-wave svg { height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #aip-footer .badge-spin { animation: none; }
+  #aip-footer .pill { transition: none; }
+  #aip-footer .pill:hover, #aip-footer .pill:focus-visible { transform: none; }
+}
+#aip-footer .footer-bottom a { color: #93a0b8; }
+#aip-footer .footer-bottom a:hover { color: #ffffff; }
+#aip-footer .signup-note a { color: #c9d3e0; }
+#aip-footer .btn-sm { padding: 8px 18px; font-size: 14px; }
+#aip-footer .footer-stack { display: flex; flex-direction: column; gap: 14px; }
+#aip-footer .shop-card .shop-line { color: #ffffff; font-size: 14px; margin: 0 0 12px; }
+#aip-footer .footer-signup .signup-lead { font-size: 14px; margin-bottom: 10px; }
+#aip-footer .signup-inline { display: flex; flex-wrap: wrap; gap: 8px; }
+#aip-footer .signup-inline input { flex: 1 1 170px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px; }
+#aip-footer .signup-inline .btn { padding: 12px 24px; }
+#aip-footer .signup-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+#aip-footer .signup-note { color: #93a0b8; }
+#aip-footer .signup-box { background: var(--offwhite);
+  border-left: 4px solid var(--yellow);
+  border-radius: 10px;
+  padding: 36px 32px;
+  max-width: 640px;
+  margin: 0 auto; }
+#aip-footer .signup-box .grid-2 { gap: 16px; text-align: left; }
+@media (max-width: 860px) {
+  #aip-footer .signup-box { padding: 28px 20px; }
+}
+</style>
+<footer class="site-footer" id="aip-footer">
+<div class="footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" focusable="false"><path class="wave-back" d="M0 28 C240 68 480 0 720 24 C960 48 1200 4 1440 30 L1440 70 L0 70 Z"/><path class="wave-front" d="M0 44 C260 78 520 14 760 40 C1000 64 1220 24 1440 44 L1440 70 L0 70 Z"/></svg></div>
+<svg class="footer-art footer-art-left" viewBox="0 0 260 260" aria-hidden="true" focusable="false"><path d="M20 250 C60 190 90 130 170 40"/><g transform="translate(36.7 224.2) rotate(-105.7)"><path d="M0 0 C12.4 -14.8 29.6 -14.8 41.2 0 C29.6 14.8 12.4 14.8 0 0 Z"/><path d="M0 0 L33.8 0"/></g><g transform="translate(36.7 224.2) rotate(-9.7)"><path d="M0 0 C12.4 -14.8 29.6 -14.8 41.2 0 C29.6 14.8 12.4 14.8 0 0 Z"/><path d="M0 0 L33.8 0"/></g><g transform="translate(53.2 197.9) rotate(-105.9)"><path d="M0 0 C11.5 -13.8 27.6 -13.8 38.3 0 C27.6 13.8 11.5 13.8 0 0 Z"/><path d="M0 0 L31.4 0"/></g><g transform="translate(53.2 197.9) rotate(-9.9)"><path d="M0 0 C11.5 -13.8 27.6 -13.8 38.3 0 C27.6 13.8 11.5 13.8 0 0 Z"/><path d="M0 0 L31.4 0"/></g><g transform="translate(70.6 170.5) rotate(-105.0)"><path d="M0 0 C10.7 -12.8 25.6 -12.8 35.5 0 C25.6 12.8 10.7 12.8 0 0 Z"/><path d="M0 0 L29.1 0"/></g><g transform="translate(70.6 170.5) rotate(-9.0)"><path d="M0 0 C10.7 -12.8 25.6 -12.8 35.5 0 C25.6 12.8 10.7 12.8 0 0 Z"/><path d="M0 0 L29.1 0"/></g><g transform="translate(90.0 141.5) rotate(-103.3)"><path d="M0 0 C9.8 -11.8 23.5 -11.8 32.7 0 C23.5 11.8 9.8 11.8 0 0 Z"/><path d="M0 0 L26.8 0"/></g><g transform="translate(90.0 141.5) rotate(-7.3)"><path d="M0 0 C9.8 -11.8 23.5 -11.8 32.7 0 C23.5 11.8 9.8 11.8 0 0 Z"/><path d="M0 0 L26.8 0"/></g><g transform="translate(112.3 110.5) rotate(-101.1)"><path d="M0 0 C9.0 -10.7 21.5 -10.7 29.9 0 C21.5 10.7 9.0 10.7 0 0 Z"/><path d="M0 0 L24.5 0"/></g><g transform="translate(112.3 110.5) rotate(-5.1)"><path d="M0 0 C9.0 -10.7 21.5 -10.7 29.9 0 C21.5 10.7 9.0 10.7 0 0 Z"/><path d="M0 0 L24.5 0"/></g><g transform="translate(138.6 76.8) rotate(-98.7)"><path d="M0 0 C8.1 -9.7 19.5 -9.7 27.0 0 C19.5 9.7 8.1 9.7 0 0 Z"/><path d="M0 0 L22.2 0"/></g><g transform="translate(138.6 76.8) rotate(-2.7)"><path d="M0 0 C8.1 -9.7 19.5 -9.7 27.0 0 C19.5 9.7 8.1 9.7 0 0 Z"/><path d="M0 0 L22.2 0"/></g><g transform="translate(170.0 40.0) rotate(-48.5)"><path d="M0 0 C6.6 -7.9 15.8 -7.9 22.0 0 C15.8 7.9 6.6 7.9 0 0 Z"/><path d="M0 0 L18.0 0"/></g><path d="M70 255 C110 215 160 190 240 170"/><g transform="translate(95.4 232.7) rotate(-92.3)"><path d="M0 0 C8.2 -9.8 19.7 -9.8 27.3 0 C19.7 9.8 8.2 9.8 0 0 Z"/><path d="M0 0 L22.4 0"/></g><g transform="translate(95.4 232.7) rotate(17.7)"><path d="M0 0 C8.2 -9.8 19.7 -9.8 27.3 0 C19.7 9.8 8.2 9.8 0 0 Z"/><path d="M0 0 L22.4 0"/></g><g transform="translate(124.1 213.6) rotate(-84.9)"><path d="M0 0 C7.4 -8.9 17.7 -8.9 24.6 0 C17.7 8.9 7.4 8.9 0 0 Z"/><path d="M0 0 L20.2 0"/></g><g transform="translate(124.1 213.6) rotate(25.1)"><path d="M0 0 C7.4 -8.9 17.7 -8.9 24.6 0 C17.7 8.9 7.4 8.9 0 0 Z"/><path d="M0 0 L20.2 0"/></g><g transform="translate(157.1 197.0) rotate(-78.2)"><path d="M0 0 C6.6 -7.9 15.8 -7.9 21.9 0 C15.8 7.9 6.6 7.9 0 0 Z"/><path d="M0 0 L18.0 0"/></g><g transform="translate(157.1 197.0) rotate(31.8)"><path d="M0 0 C6.6 -7.9 15.8 -7.9 21.9 0 C15.8 7.9 6.6 7.9 0 0 Z"/><path d="M0 0 L18.0 0"/></g><g transform="translate(195.4 182.7) rotate(-72.9)"><path d="M0 0 C5.8 -6.9 13.8 -6.9 19.2 0 C13.8 6.9 5.8 6.9 0 0 Z"/><path d="M0 0 L15.7 0"/></g><g transform="translate(195.4 182.7) rotate(37.1)"><path d="M0 0 C5.8 -6.9 13.8 -6.9 19.2 0 C13.8 6.9 5.8 6.9 0 0 Z"/><path d="M0 0 L15.7 0"/></g><g transform="translate(240.0 170.0) rotate(-14.2)"><path d="M0 0 C4.5 -5.4 10.8 -5.4 15.0 0 C10.8 5.4 4.5 5.4 0 0 Z"/><path d="M0 0 L12.3 0"/></g></svg>
+<svg class="footer-art footer-art-right" viewBox="0 0 260 260" aria-hidden="true" focusable="false"><path d="M240 10 C200 70 170 120 90 210"/><g transform="translate(225.4 32.1) rotate(83.4)"><path d="M0 0 C7.4 -8.8 17.7 -8.8 24.5 0 C17.7 8.8 7.4 8.8 0 0 Z"/><path d="M0 0 L20.1 0"/></g><g transform="translate(225.4 32.1) rotate(163.4)"><path d="M0 0 C7.4 -8.8 17.7 -8.8 24.5 0 C17.7 8.8 7.4 8.8 0 0 Z"/><path d="M0 0 L20.1 0"/></g><g transform="translate(210.9 53.9) rotate(83.7)"><path d="M0 0 C6.9 -8.3 16.6 -8.3 23.1 0 C16.6 8.3 6.9 8.3 0 0 Z"/><path d="M0 0 L18.9 0"/></g><g transform="translate(210.9 53.9) rotate(163.7)"><path d="M0 0 C6.9 -8.3 16.6 -8.3 23.1 0 C16.6 8.3 6.9 8.3 0 0 Z"/><path d="M0 0 L18.9 0"/></g><g transform="translate(196.1 75.9) rotate(84.6)"><path d="M0 0 C6.5 -7.8 15.6 -7.8 21.6 0 C15.6 7.8 6.5 7.8 0 0 Z"/><path d="M0 0 L17.7 0"/></g><g transform="translate(196.1 75.9) rotate(164.6)"><path d="M0 0 C6.5 -7.8 15.6 -7.8 21.6 0 C15.6 7.8 6.5 7.8 0 0 Z"/><path d="M0 0 L17.7 0"/></g><g transform="translate(180.0 98.8) rotate(85.8)"><path d="M0 0 C6.0 -7.3 14.5 -7.3 20.2 0 C14.5 7.3 6.0 7.3 0 0 Z"/><path d="M0 0 L16.5 0"/></g><g transform="translate(180.0 98.8) rotate(165.8)"><path d="M0 0 C6.0 -7.3 14.5 -7.3 20.2 0 C14.5 7.3 6.0 7.3 0 0 Z"/><path d="M0 0 L16.5 0"/></g><g transform="translate(162.1 123.0) rotate(87.3)"><path d="M0 0 C5.6 -6.7 13.5 -6.7 18.7 0 C13.5 6.7 5.6 6.7 0 0 Z"/><path d="M0 0 L15.3 0"/></g><g transform="translate(162.1 123.0) rotate(167.3)"><path d="M0 0 C5.6 -6.7 13.5 -6.7 18.7 0 C13.5 6.7 5.6 6.7 0 0 Z"/><path d="M0 0 L15.3 0"/></g><g transform="translate(141.6 149.2) rotate(88.8)"><path d="M0 0 C5.2 -6.2 12.4 -6.2 17.2 0 C12.4 6.2 5.2 6.2 0 0 Z"/><path d="M0 0 L14.1 0"/></g><g transform="translate(141.6 149.2) rotate(168.8)"><path d="M0 0 C5.2 -6.2 12.4 -6.2 17.2 0 C12.4 6.2 5.2 6.2 0 0 Z"/><path d="M0 0 L14.1 0"/></g><g transform="translate(117.8 178.0) rotate(90.3)"><path d="M0 0 C4.7 -5.7 11.3 -5.7 15.8 0 C11.3 5.7 4.7 5.7 0 0 Z"/><path d="M0 0 L12.9 0"/></g><g transform="translate(117.8 178.0) rotate(170.3)"><path d="M0 0 C4.7 -5.7 11.3 -5.7 15.8 0 C11.3 5.7 4.7 5.7 0 0 Z"/><path d="M0 0 L12.9 0"/></g><g transform="translate(90.0 210.0) rotate(131.5)"><path d="M0 0 C3.9 -4.7 9.4 -4.7 13.0 0 C9.4 4.7 3.9 4.7 0 0 Z"/><path d="M0 0 L10.7 0"/></g><path d="M250 90 C215 110 185 150 150 230"/><g transform="translate(232.9 101.8) rotate(80.7)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(232.9 101.8) rotate(200.7)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(216.3 117.4) rotate(72.4)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(216.3 117.4) rotate(192.4)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(200.0 137.5) rotate(65.7)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(200.0 137.5) rotate(185.7)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(183.7 162.6) rotate(60.4)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(183.7 162.6) rotate(180.4)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(167.1 193.2) rotate(56.5)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(167.1 193.2) rotate(176.5)"><path d="M0 0 C5.4 -6.5 13.0 -6.5 18.0 0 C13.0 6.5 5.4 6.5 0 0 Z"/><path d="M0 0 L14.8 0"/></g><g transform="translate(150.0 230.0) rotate(113.8)"><path d="M0 0 C2.7 -3.2 6.5 -3.2 9.0 0 C6.5 3.2 2.7 3.2 0 0 Z"/><path d="M0 0 L7.4 0"/></g></svg>
+<div class="container footer-inner">
+
+<div class="footer-start">
+<h2 class="footer-start-title">Where should I start?</h2>
+<div class="pill-row">
+<a href="/program-gut-health" class="pill">I'm always bloated</a>
+<a href="/program-hormone-reset" class="pill">My hormones feel off</a>
+<a href="/program-hormone-reset" class="pill">I just want my energy back</a>
+</div>
+</div>
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+<div class="footer-brand-row">
+<img src="https://assets.cdn.filesafe.space/EvjnO4xt4AwXVkc2EZ1T/media/6aaa1864bc55ee8d56a433fe.png" alt="AIP Wellness logo">
+<div class="footer-badge" title="Nourished at the Core"><svg class="badge-spin" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><defs><path id="badge-circle" d="M65,65 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle" textLength="312" lengthAdjust="spacingAndGlyphs">NOURISHED AT THE CORE &#8226; WHEREVER YOU ARE &#8226;</textPath></text></svg><span class="badge-center"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19l7-7"/></svg></span><span class="visually-hidden">Nourished at the Core. Coaching wherever you are.</span></div>
+</div>
+<p class="footer-tagline">Gut &amp; hormone coaching for women in midlife, wherever you are.</p>
+<div class="social-row">
+<a href="https://www.instagram.com/thrive_to_midlife/" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="AIP Wellness on Instagram"><circle cx="17" cy="17" r="17" fill="#F4A9B8"/><rect x="10" y="10" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17" cy="17" r="3.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="21.2" cy="12.8" r="1" fill="#fff"/></svg></a>
+<a href="https://www.facebook.com/Chicabravaaa/" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="AIP Wellness on Facebook"><circle cx="17" cy="17" r="17" fill="#1C2B4A"/><path d="M18.4 26v-7.6h2.5l.4-3h-2.9v-1.9c0-.9.3-1.5 1.5-1.5h1.5V9.3c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4h-2.5v3h2.5V26z" fill="#fff"/></svg></a>
+<a href="https://www.linkedin.com/in/anya-gossage-b1518b30" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="Anya Gossage on LinkedIn"><circle cx="17" cy="17" r="17" fill="#F5E14C"/><path d="M11.5 14.5h2.8V23h-2.8zM12.9 10.3a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2zM16.1 14.5h2.7v1.2c.4-.7 1.3-1.4 2.7-1.4 2.9 0 3.4 1.9 3.4 4.3V23h-2.8v-4c0-1 0-2.2-1.3-2.2-1.4 0-1.6 1-1.6 2.1V23h-2.8z" fill="#1C2B4A"/></svg></a>
+<a href="https://www.youtube.com/@thegutzynutritionist/videos" target="_blank" rel="noopener"><svg viewBox="0 0 34 34" width="34" height="34" role="img" aria-label="AIP Wellness on YouTube"><circle cx="17" cy="17" r="17" fill="#6BC96A"/><path d="M14 11.5l8.5 5.5-8.5 5.5z" fill="#fff"/></svg></a>
+</div>
+</div>
+
+<nav class="footer-menu" aria-label="Footer menu">
+<p class="footer-heading">Explore</p>
+<ul class="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/programs">Programs</a></li>
+<li><a href="/reviews">Success Stories</a></li>
+<li><a href="/supplements">Supplements</a></li>
+<li><a href="/about">About Anya</a></li>
+<li><a href="/learn">Learn</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="footer-stack">
+<div class="footer-card shop-card">
+<p class="footer-heading"><svg class="leaf-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6v3H9z"/><path d="M8 6h8l1 3v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"/><path d="M10 16c0-2.4 1.5-3.9 4-4 0 2.5-1.5 4-4 4zM10 16l2-2"/></svg> Anya's Supplement Shop</p>
+<p class="shop-line">Up to 20% off + free shipping over $50</p>
+<a href="https://us.fullscript.com/welcome/agossage" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Shop Now<span class="visually-hidden"> (opens in a new tab)</span></a>
+</div>
+<div class="footer-card footer-signup" id="newsletter">
+<svg class="envelope-art" viewBox="0 0 72 54" aria-hidden="true" focusable="false"><rect x="4" y="10" width="60" height="40" rx="6" fill="#FBF3EF"/><path d="M4 15l30 19 30-19" fill="none" stroke="#F4A9B8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="60" cy="12" r="10" fill="#F5E14C"/><path d="M55 17c0-5 3-8 9-9 0 6-3 9-8 9M55 17l4-4" fill="none" stroke="#1C2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<p class="footer-heading">Nourish Notes</p>
+<!-- Newsletter form: sends to the GHL Newsletter webhook (name + email, source "footer-newsletter"). -->
+<div id="aip-form-footer" class="aipf">
+<form novalidate>
+<div class="aipf-hp" aria-hidden="true"><label>Leave this empty <input type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore></label></div>
+<div class="aipf-row">
+<input type="text" name="name" data-field aria-label="Name" placeholder="Name" autocomplete="name" required>
+<input type="email" name="email" data-field aria-label="Email address" placeholder="Your email" autocomplete="email" required>
+<button type="submit">Join</button>
+</div>
+</form>
+<p class="aipf-note">No spam. Unsubscribe anytime.<br>By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+<p class="aipf-status" role="status" aria-live="polite"></p>
+</div>
+<style>
+#aip-form-footer {
+  --aipf-green: #6BC96A; --aipf-green-dark: #5db55c; --aipf-yellow: #F5E14C; --aipf-navy: #1C2B4A;
+  --aipf-pink: #F4A9B8; --aipf-cream: #EFF7EC; --aipf-offwhite: #FBF3EF; --aipf-text: #2c2c28; --aipf-muted: #6b6b62;
+  font-family: Georgia, 'Times New Roman', serif; color: var(--aipf-text); line-height: 1.6; box-sizing: border-box;
+}
+#aip-form-footer *, #aip-form-footer *:before, #aip-form-footer *:after { box-sizing: border-box; }
+#aip-form-footer form { margin: 0; }
+#aip-form-footer input, #aip-form-footer textarea {
+  width: 100%; padding: 12px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-family: inherit; font-size: 15px; color: var(--aipf-text); background: #ffffff; margin: 0;
+}
+#aip-form-footer input:focus-visible, #aip-form-footer textarea:focus-visible, #aip-form-footer button:focus-visible, #aip-form-footer a:focus-visible {
+  outline: 2px solid var(--aipf-green); outline-offset: 2px;
+}
+#aip-form-footer button {
+  display: inline-block; padding: 12px 28px; border: 0; border-radius: 4px; cursor: pointer;
+  background: var(--aipf-green); color: #ffffff; font-family: inherit; font-size: 15px; font-weight: bold; letter-spacing: 0.3px;
+}
+#aip-form-footer button:hover { background: var(--aipf-green-dark); }
+#aip-form-footer button:disabled { opacity: 0.7; cursor: wait; }
+#aip-form-footer .aipf-note { font-size: 12px; color: var(--aipf-muted); margin: 10px 0 0; }
+#aip-form-footer .aipf-note a { color: inherit; }
+#aip-form-footer .aipf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+#aip-form-footer .aipf-status { font-size: 14px; margin: 10px 0 0; }
+#aip-form-footer .aipf-status:empty { display: none; }
+#aip-form-footer .aipf-status.is-success { background: var(--aipf-cream); color: var(--aipf-navy); border-left: 4px solid var(--aipf-green); padding: 10px 14px; border-radius: 6px; }
+#aip-form-footer .aipf-status.is-error { background: #FFE3E3; color: #C62828; border-left: 4px solid #C62828; padding: 10px 14px; border-radius: 6px; }
+
+#aip-form-footer { color: #c9d3e0; max-width: 360px; }
+#aip-form-footer .aipf-lead { font-size: 14px; margin: 0 0 10px; color: #c9d3e0; }
+#aip-form-footer .aipf-row { display: flex; flex-wrap: wrap; gap: 8px; }
+#aip-form-footer .aipf-row input { flex: 1 1 140px; min-width: 0; }
+#aip-form-footer .aipf-row button { padding: 12px 18px; }
+#aip-form-footer .aipf-note { color: #93a0b8; }
+#aip-form-footer .aipf-note a { color: #c9d3e0; }
+</style>
+<script>
+(function () {
+  // Paste your GHL Inbound Webhook URL between the quotes:
+  var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/EvjnO4xt4AwXVkc2EZ1T/webhook-trigger/d608ebbf-cede-45c4-80c2-5a1e98bcc8cc";
+  var SOURCE = "footer-newsletter";
+
+  var loadedAt = Date.now();
+
+  function init() {
+  var root = document.getElementById("aip-form-footer");
+  if (!root || root.getAttribute("data-ready")) return;
+  root.setAttribute("data-ready", "1");
+  var form = root.querySelector("form");
+  var button = form.querySelector("button[type=submit]");
+  var status = root.querySelector(".aipf-status");
+  var buttonText = button.textContent;
+
+  function show(kind, message) {
+    status.className = "aipf-status is-" + kind;
+    status.textContent = message;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    // Spam bots fill the hidden field and submit instantly. Only block when both happen, so a browser
+      // or password manager that auto-fills the hidden field can't silently stop a real sign-up.
+      if (form.querySelector(".aipf-hp input").value && Date.now() - loadedAt < 3000) return;
+
+    if (WEBHOOK_URL.indexOf("https://") !== 0) {
+      show("error", "This form isn't connected yet. Add your GHL webhook link to the code to start receiving submissions.");
+      return;
+    }
+
+    var data = new URLSearchParams();
+    var fields = form.querySelectorAll("[data-field]");
+    for (var i = 0; i < fields.length; i++) data.append(fields[i].name, fields[i].value.trim());
+    // Split the name so GHL can map First Name and Last Name
+    var parts = (form.querySelector("[name=name]").value.trim()).split(/\s+/);
+    data.append("first_name", parts.shift() || "");
+    data.append("last_name", parts.join(" "));
+    data.append("source", SOURCE);
+    data.append("page", window.location.href);
+
+    button.disabled = true;
+    button.textContent = "Sending\u2026";
+    fetch(WEBHOOK_URL, { method: "POST", mode: "no-cors", body: data })
+      .then(function () {
+        form.reset();
+        show("success", "You're on the list! Watch your inbox for tips from Anya.");
+      })
+      .catch(function () {
+        show("error", "Something went wrong. Please try again in a moment.");
+      })
+      .then(function () {
+        button.disabled = false;
+        button.textContent = buttonText;
+      });
+  });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">&copy; 2026 AIP Wellness. All rights reserved. &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms">Terms of Use</a></div>
+</div>
+</footer>
+<script>
+(function () {
+  var TIPS = [
+    "Drink a glass of water before your morning coffee.",
+    "Try including protein at breakfast to help keep energy steadier.",
+    "Chew slowly. Digestion starts in your mouth.",
+    "A 10-minute walk after meals can help you feel less sluggish.",
+    "Colorful vegetables, beans, and berries give your gut the fiber it loves.",
+    "Take three slow belly breaths before you eat.",
+    "Morning daylight can help support your natural sleep rhythm.",
+    "Try adding a fermented food like yogurt, kefir, or sauerkraut."
+  ];
+  function init() {
+    var tip = document.getElementById("nourish-tip");
+    if (tip) tip.textContent = TIPS[Math.floor(Math.random() * TIPS.length)];
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+</body></html>
